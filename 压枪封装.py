@@ -81,7 +81,7 @@ class RecoilManager:
         """ 压枪控制线程逻辑 """
         try:
             while not self.stop_event.is_set():
-                hmbb.motton(0, self.weapon_params['recoil_motton_param1'])
+                hmbb.motton(hmbb.get_mouseId(),0, self.weapon_params['recoil_motton_param1'])
                 time.sleep(self.weapon_params['recoil_sleep_time'])
                 logging.debug("压枪中...")
         except Exception as e:
